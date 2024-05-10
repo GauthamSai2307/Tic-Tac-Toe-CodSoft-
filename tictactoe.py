@@ -96,10 +96,6 @@ def ask_ai(board, player, opponent):
             return opp_win_pos[0]
         else:
             return utility_pos
-print(player + " win pos: ", win_pos)
-print(opponent + " win pos: ", opp_win_pos)
-print("utility pos: ", utility_pos)
-
 
 def start_match(user="X", ai="O", player="X"):
     board = [["1", "2", "3"],
@@ -115,6 +111,8 @@ def start_match(user="X", ai="O", player="X"):
             if result:
                 print("THE WINNER IS: " + player)
                 break
+            if i == 8:
+                print("THE GAME IS A DRAW")
             player = ai
         elif player == ai:
             move = ask_ai(board, ai, user)
@@ -127,8 +125,8 @@ def start_match(user="X", ai="O", player="X"):
             if result:
                 print("THE WINNER IS: " + player)
                 break
+            if i == 8:
+                print("THE GAME IS A DRAW")
             player = user
 
 start_match()
-if id == 9:
-            print("DRAW MATCH")
